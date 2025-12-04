@@ -5,28 +5,21 @@ title: Home
 
 # 23rd China International Talent Exchange Conference
 
-## Data Science, Fintech and Digital Economy
+<span class="badge">October 20-23, 2025</span>
+<span class="badge">Shanghai, China</span>
+<span class="badge">Data Science & Fintech</span>
 
-**October 20-23, 2025 | Shanghai, China**
-
----
-
-## About the Conference
-
-The 23rd China International Talent Exchange Conference brought together leading international scholars, journal editors, and young researchers to discuss advances in data science, fintech, and digital economy. The conference featured roundtable discussions, editorial meetings, and academic forums at prestigious venues across Shanghai.
+International scholars, journal editors, and young researchers discuss advances in data science, fintech, and digital economy.
 
 ---
 
-## Conference Sessions
+<div class="session-card" id="session-1">
 
-### Session 1: Roundtable on Economic Resilience in Emerging Markets
+### Session 1: Economic Resilience Roundtable
 
-**Date:** October 20, 2025
-**Venue:** Shanghai Yoja Hotel
+<span class="badge">Oct 20</span> <span class="badge">Shanghai Yoja Hotel</span>
 
-An in-depth academic discussion among international scholars examining economic resilience strategies and challenges in emerging market economies.
-
-**Panelists:**
+International scholars examining economic resilience in emerging markets.
 
 | Scholar | Affiliation |
 |---------|-------------|
@@ -37,59 +30,43 @@ An in-depth academic discussion among international scholars examining economic 
 | Lu Qiao | Leeds University, UK |
 | Suyang Li | Swansea University, UK |
 
----
+</div>
 
-### Session 2: A China's Story, A Global Research - Meeting with Editors
+<div class="session-card" id="session-2">
 
-**Date:** October 22, 2025
-**Venue:** Shanghai World Expo Conference Center
+### Session 2: Meeting with Editors
 
-A special session promoting research achievements in philosophy and social sciences with Chinese characteristics, providing an international platform for disseminating outstanding Chinese research globally.
+<span class="badge">Oct 22</span> <span class="badge">World Expo Conference Center</span>
 
-**Journal Editors:**
+"A China's Story, A Global Research" - promoting Chinese research internationally.
 
 | Editor | Journal / Affiliation |
 |--------|----------------------|
-| Jianqing Fan | Journal of the American Statistical Association; Dean, Fudan School of Data Science |
+| Jianqing Fan | JASA; Dean, Fudan School of Data Science |
 | Wolfgang Haerdle | Digital Finance; Humboldt University Berlin |
 | Jonathan Batten | Finance Research Letters; RMIT University |
-| Peter Szilagyi | Journal of International Financial Markets, Institutions & Money; EDHEC Business School |
+| Peter Szilagyi | JIFMIM; EDHEC Business School |
 | Joerg Osterrieder | Management and Marketing |
 
----
+</div>
 
-### Session 3: Towards The Future - Young Scholars Forum
+<div class="session-card" id="session-3">
 
-**Date:** October 22, 2025
-**Venue:** Shanghai World Expo Conference Center
-**Organizer:** Capital University of Economics and Business (Prof. Yezhou Sha)
+### Session 3: Young Scholars Forum
 
-**Keynote Presentation:**
+<span class="badge">Oct 22</span> <span class="badge">World Expo Conference Center</span>
 
-> **Speaker:** Prof. Joerg Osterrieder (University of Twente)
+Organizer: Capital University of Economics and Business (Prof. Yezhou Sha)
+
+> **Keynote:** Prof. Joerg Osterrieder
 >
-> **Title:** "Digital Finance: Non-Systematic Systematics, LLM Narratives, and High-Frequency Trading Around Macro-News Announcements"
+> "Digital Finance: Non-Systematic Systematics, LLM Narratives, and High-Frequency Trading Around Macro-News Announcements"
 
-This forum provided young scholars with the opportunity to engage with leading researchers and gain insights into cutting-edge developments in digital finance and AI applications.
-
----
-
-## Photo Gallery
-
-View photographs from all conference sessions:
-
-[**Browse Photo Gallery**](gallery.html)
+</div>
 
 ---
 
-## Conference Venues
+## Venues
 
-- **Shanghai Yoja Hotel** - Roundtable discussions (October 20)
-- **Shanghai World Expo Conference Center** - Editors meeting and Young Scholars Forum (October 22)
-
----
-
-## Links
-
-- [Original conference page on joergosterrieder.com](https://www.joergosterrieder.com/public-outreach#h.1z0x9146tw94)
-- [Digital-AI-Finance GitHub Organization](https://github.com/Digital-AI-Finance)
+- **Shanghai Yoja Hotel** - Roundtable (Oct 20)
+- **Shanghai World Expo Conference Center** - Editors Meeting & Forum (Oct 22)

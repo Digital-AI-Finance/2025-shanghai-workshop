@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #333;
+      background: #f5f7fa;
+    }
+
+    /* Top Navigation */
+    .top-nav {
+      background: linear-gradient(135deg, #1a365d 0%, #2563eb 100%);
+      color: white;
+      padding: 12px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .top-nav-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    /* Layout Container */
+    .container {
+      display: flex;
+      margin-top: 50px;
+      min-height: calc(100vh - 50px);
+    }
+
+    /* Side Navigation */
+    .side-nav {
+      width: 200px;
+      background: #1e3a5f;
+      padding: 20px 0;
+      position: fixed;
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+
+    .side-nav a {
+      display: block;
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 13px;
+      border-left: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .side-nav a:hover,
+    .side-nav a.active {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border-left-color: #60a5fa;
+    }
+
+    .side-nav .nav-section {
+      color: #94a3b8;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 15px 20px 8px;
+      font-weight: 600;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      margin-left: 200px;
+      padding: 25px 30px;
+      max-width: 1000px;
+    }
+
+    /* Typography */
+    h1 {
+      color: #1e3a5f;
+      font-size: 24px;
+      margin-bottom: 8px;
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 8px;
+    }
+
+    h2 {
+      color: #1e3a5f;
+      font-size: 18px;
+      margin: 20px 0 10px;
+    }
+
+    h3 {
+      color: #334155;
+      font-size: 15px;
+      margin: 15px 0 8px;
+    }
+
+    p { margin-bottom: 10px; }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 15px;
+      font-size: 13px;
+    }
+
+    th {
+      background: #1e3a5f;
+      color: white;
+      padding: 8px 12px;
+      text-align: left;
+      font-weight: 500;
+    }
+
+    td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    tr:hover td { background: #f1f5f9; }
+
+    /* Cards */
+    .session-card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-left: 4px solid #2563eb;
+    }
+
+    /* Info badges */
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+
+    /* Blockquotes */
+    blockquote {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 12px 15px;
+      margin: 10px 0;
+      font-size: 13px;
+    }
+
+    /* Links */
+    a { color: #2563eb; }
+    a:hover { color: #1d4ed8; }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 15px;
+      margin: 15px 0;
+    }
+
+    .gallery-item {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-item .caption {
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #475569;
+      background: #f8fafc;
+    }
+
+    /* Horizontal rule */
+    hr {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 20px 0;
+    }
+
+    /* Lists */
+    ul, ol {
+      margin: 8px 0 12px 20px;
+    }
+
+    li { margin-bottom: 4px; }
+
+    /* Footer */
+    .footer {
+      margin-top: 30px;
+      padding: 15px 0;
+      border-top: 1px solid #e2e8f0;
+      font-size: 12px;
+      color: #64748b;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="top-nav-content">
+      <div class="site-title">Shanghai Workshop 2025</div>
+      <div class="nav-links">
+        <a href="{{ site.baseurl }}/">Home</a>
+        <a href="{{ site.baseurl }}/gallery.html">Gallery</a>
+        <a href="https://github.com/Digital-AI-Finance/2025-shanghai-workshop">GitHub</a>
+        <a href="https://www.joergosterrieder.com/public-outreach#h.1z0x9146tw94">Source</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="side-nav">
+      <div class="nav-section">Overview</div>
+      <a href="{{ site.baseurl }}/">Conference Info</a>
+      <a href="{{ site.baseurl }}/gallery.html">Photo Gallery</a>
+
+      <div class="nav-section">Sessions</div>
+      <a href="{{ site.baseurl }}/#session-1">Economic Resilience</a>
+      <a href="{{ site.baseurl }}/#session-2">Editors Meeting</a>
+      <a href="{{ site.baseurl }}/#session-3">Young Scholars</a>
+
+      <div class="nav-section">Links</div>
+      <a href="https://www.joergosterrieder.com">joergosterrieder.com</a>
+      <a href="https://github.com/Digital-AI-Finance">Digital-AI-Finance</a>
+    </nav>
+
+    <main class="main-content">
+      {{ content }}
+
+      <div class="footer">
+        23rd China International Talent Exchange Conference | October 2025 | Shanghai
+      </div>
+    </main>
+  </div>
+</body>
+</html>
