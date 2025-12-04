@@ -1,23 +1,17 @@
 title: "Shanghai Workshop 2025"
-description: "23rd China International Talent Exchange Conference - Data Science, Fintech and Digital Economy"
+description: "23rd China International Talent Exchange Conference - Data Science, Fintech and Digital Economy | October 20-23, 2025"
 baseurl: "/2025-shanghai-workshop"
 url: "https://digital-ai-finance.github.io"
 
-# Theme
-remote_theme: pages-themes/minimal@v0.2.0
+remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-remote-theme
 
-# Author info
-author:
-  name: "Prof. Dr. Joerg Osterrieder"
-
-# Build settings
 markdown: kramdown
 highlighter: rouge
 
-# Exclude from processing
 exclude:
   - download_images.py
   - "*.py"
   - README.md
+  - nul
