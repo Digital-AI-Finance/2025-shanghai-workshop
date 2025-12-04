@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Shanghai Workshop 2025</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #1e293b;
+      background: #f8fafc;
+    }
+
+    /* Navigation */
+    nav {
+      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+      color: white;
+      padding: 12px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .title { font-size: 14px; font-weight: 600; }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+      margin-left: 20px;
+      opacity: 0.9;
+    }
+
+    nav a:hover { opacity: 1; }
+
+    /* Main container */
+    .container {
+      max-width: 900px;
+      margin: 60px auto 40px;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 30px 0;
+      border-bottom: 2px solid #2563eb;
+      margin-bottom: 25px;
+    }
+
+    header h1 {
+      color: #1e3a5f;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    header .subtitle {
+      color: #2563eb;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    header .meta {
+      margin-top: 12px;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    /* Sections */
+    section {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-left: 4px solid #2563eb;
+    }
+
+    section h2 {
+      color: #1e3a5f;
+      font-size: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section h3 {
+      color: #334155;
+      font-size: 13px;
+      margin: 12px 0 8px;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+    }
+
+    .badge-dark {
+      background: #1e3a5f;
+      color: white;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 12px;
+    }
+
+    th {
+      background: #1e3a5f;
+      color: white;
+      padding: 8px 10px;
+      text-align: left;
+      font-weight: 500;
+    }
+
+    td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    tr:hover td { background: #f1f5f9; }
+
+    /* Keynote */
+    .keynote {
+      background: #eff6ff;
+      border-radius: 6px;
+      padding: 12px 15px;
+      margin: 10px 0;
+    }
+
+    .keynote-speaker {
+      font-weight: 600;
+      color: #1e3a5f;
+    }
+
+    .keynote-title {
+      color: #475569;
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 15px 0;
+    }
+
+    .gallery-item {
+      background: #f1f5f9;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-item .caption {
+      padding: 8px;
+      font-size: 11px;
+      color: #475569;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #64748b;
+      font-size: 11px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    footer a { color: #2563eb; }
+
+    /* Links */
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    p { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="title">Shanghai Workshop 2025</span>
+    <div>
+      <a href="#sessions">Sessions</a>
+      <a href="#gallery">Gallery</a>
+      <a href="https://github.com/Digital-AI-Finance/2025-shanghai-workshop">GitHub</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>23rd China International Talent Exchange Conference</h1>
+      <div class="subtitle">Data Science, Fintech and Digital Economy</div>
+      <div class="meta">October 20-23, 2025 | Shanghai, China</div>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>International scholars, journal editors, and young researchers discuss advances in data science, fintech, and digital economy at prestigious venues across Shanghai.</p>
+    </section>
+
+    <section id="sessions">
+      <h2>Session 1: Economic Resilience Roundtable</h2>
+      <p><span class="badge">Oct 20</span> <span class="badge">Shanghai Yoja Hotel</span></p>
+      <p>International scholars examining economic resilience in emerging markets.</p>
+      <table>
+        <tr><th>Scholar</th><th>Affiliation</th></tr>
+        <tr><td>Susan Sharma</td><td>Deakin University, Australia</td></tr>
+        <tr><td>Liu Guanyu</td><td>Capital University of Economics and Business, China</td></tr>
+        <tr><td>Georg Keilbar</td><td>Humboldt University of Berlin, Germany</td></tr>
+        <tr><td>Joerg Osterrieder</td><td>University of Twente, Netherlands</td></tr>
+        <tr><td>Lu Qiao</td><td>Leeds University, UK</td></tr>
+        <tr><td>Suyang Li</td><td>Swansea University, UK</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Session 2: Meeting with Editors</h2>
+      <p><span class="badge">Oct 22</span> <span class="badge">World Expo Conference Center</span></p>
+      <p>"A China's Story, A Global Research" - promoting Chinese research internationally.</p>
+      <table>
+        <tr><th>Editor</th><th>Journal / Affiliation</th></tr>
+        <tr><td>Jianqing Fan</td><td>JASA; Dean, Fudan School of Data Science</td></tr>
+        <tr><td>Wolfgang Haerdle</td><td>Digital Finance; Humboldt University Berlin</td></tr>
+        <tr><td>Jonathan Batten</td><td>Finance Research Letters; RMIT University</td></tr>
+        <tr><td>Peter Szilagyi</td><td>JIFMIM; EDHEC Business School</td></tr>
+        <tr><td>Joerg Osterrieder</td><td>Management and Marketing</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Session 3: Young Scholars Forum</h2>
+      <p><span class="badge">Oct 22</span> <span class="badge">World Expo Conference Center</span></p>
+      <p>Organizer: Capital University of Economics and Business (Prof. Yezhou Sha)</p>
+      <div class="keynote">
+        <div class="keynote-speaker">Keynote: Prof. Joerg Osterrieder</div>
+        <div class="keynote-title">"Digital Finance: Non-Systematic Systematics, LLM Narratives, and High-Frequency Trading Around Macro-News Announcements"</div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Photo Gallery</h2>
+
+      <h3>Economic Resilience Roundtable (Oct 20)</h3>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkd0wTqLblc-MsEV3yhJvqLI_8rgzkqQqZxrrwtsUXu0op2QXSM0YrW4bBMj2LiHfumL-q-x6qn5SxDXQfK6cJyxJZexaNLW257tPE4X61uKqVHTiGJtNSqpIgbZPjlDDtoVXf4aHmdBuNELmDjXZEUj6dxnBLbPyMClO5Xll4H-K7PPDfiKN4Z15rplsc0yvDSxLfiDdt-VYxTq2SbYTb-Kawa6EXP-whyI1_E=w1280" alt="Roundtable" referrerpolicy="no-referrer">
+          <div class="caption">Roundtable discussion</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfAjU0pejIodqSihuSMY567H3vVCzxdaV9z7LOMiISDhRn87o638JGm8RSScxqYgCHizzS2xwOCboXcasfM6QQ638rHzzjxOpH3WATovQjisILhHrYBSi_e14RBPwT-gRMLaahDMokdHLYuuyy9r9bqaVIX-aknG1IPqxP8RFONdwogNSz7n82tDJi0A3YfLDgyBnHyYoTvvGf_Th_vJb66Aj8Dnov_TET0Ie4=w1280" alt="Panel" referrerpolicy="no-referrer">
+          <div class="caption">Panel discussion</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfj9Q8xcymaBRcHQoipYxPef4GC0aRKEHPNwf8_6qzBh70n1yDsL5dwt-TcjiPNGfgLsCqEk5sF0DTwro-t02kPDVzessmpYZZF5OredNXinna308RQzrhs1QCGUFHPh7aIHHb_5TiTntk6zMTx8EB4UZwYAffaEhcKFxTacEq65z_MvrCGWhRvB5bEjwKLSZJCNI7admfYtG41I-t4_ryn71dr-SmVm84vvQ8=w1280" alt="Scholars" referrerpolicy="no-referrer">
+          <div class="caption">Scholars meeting</div>
+        </div>
+      </div>
+
+      <h3>Editors Meeting (Oct 22)</h3>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCke7ZWK40kAviZKlRD3qZ3EWFFUZaUfV7HI6l4obzjdPe301VLausTx2Yxx7_o95Lssw70E6NarXwkzBkqtd_xlBYZyb1BFs2TUC0rm3vEEcyQx0awcIoCBXR_CziCXZeH5qc5URZ_zI7J8ddtzZUCfFiLXFLLsP7ruYjCwIdMcbcDItWuQhC6VSo9g-ZWYfw-TpGvOBgN0H3_ZtT9oVBg0gZjIN-t_mBHqXZ4Y=w1280" alt="Editors" referrerpolicy="no-referrer">
+          <div class="caption">Editors meeting</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcwM24zK-ENCyJp0S0zknVwtcbUEOBxopI4-wQ7eKf_UUYtzJTspeuvyL17Gu0PzCBfdg_HZ2NlxCq0Tlho9G3ms5iqSb77vosBFOnSNOPvJr_p_zf8RVCh2OHRMIgVTcGURYsRmbBilLAo6snAGDTOXxmGp3j83kEOPNbWimtYb9mojnSGKUFNK2NAvZfXMB2Jh6AAymRoRyZZ2YTRMms11hO0nCCve4vsLSg=w1280" alt="Venue" referrerpolicy="no-referrer">
+          <div class="caption">Conference venue</div>
+        </div>
+      </div>
+
+      <h3>Young Scholars Forum (Oct 22)</h3>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkdpxNPqM2CjTDQpJMq7Jt8wGm6uRk50mmRgIpX0dGZElzQxtvqujLxuGI6mG8tydfHfWI-EBfJ14Q3eieqiTF3bwhjMQa-GZZ9bJvva2WpiTMPk2cN9saPlo6X2M5iAxFDy-APYh6afwozOPQeNMSIKxIS2z-OWnSy7vSaSFQBkBwnDxqC0_BJmqBgGJY9InzR7ETWnhHVYkjsNldBktgDaSBtcCnme1SjYaIg=w1280" alt="Forum" referrerpolicy="no-referrer">
+          <div class="caption">Young Scholars Forum</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCke-Din2mi6t2vdi6wsujvDsHvJn3G0FRM24X4U1AKkkhgSicIfsOVtv6LVDojVgww8J0Q7EIrUvoPxaDME1pSVRtZb69Mi-OKVdpXjvVOtz1DUgEPU2JWqP5xG596MQMSM5D5izZXDGOzPc7u42d0E79voQClWs4XWmYA0jRDmGohnQbxJJVF_a-1yc7NDd1fHJMyFhJRDPbC4NQL7aFujlC_CxqJtd_PugiyY=w1280" alt="Keynote" referrerpolicy="no-referrer">
+          <div class="caption">Keynote presentation</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Venues</h2>
+      <table>
+        <tr><th>Venue</th><th>Sessions</th><th>Date</th></tr>
+        <tr><td>Shanghai Yoja Hotel</td><td>Economic Resilience Roundtable</td><td>Oct 20</td></tr>
+        <tr><td>Shanghai World Expo Conference Center</td><td>Editors Meeting, Young Scholars Forum</td><td>Oct 22</td></tr>
+      </table>
+    </section>
+
+    <footer>
+      <p>23rd China International Talent Exchange Conference | October 2025 | Shanghai</p>
+      <p><a href="https://www.joergosterrieder.com/public-outreach#h.1z0x9146tw94">Source</a> | <a href="https://github.com/Digital-AI-Finance">Digital-AI-Finance</a></p>
+    </footer>
+  </div>
+</body>
+</html>

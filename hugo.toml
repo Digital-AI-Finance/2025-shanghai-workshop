@@ -1,0 +1,6 @@
+baseURL = "https://digital-ai-finance.github.io/2025-shanghai-workshop/"
+languageCode = "en-us"
+title = "Shanghai Workshop 2025"
+
+[params]
+  description = "23rd China International Talent Exchange Conference"
