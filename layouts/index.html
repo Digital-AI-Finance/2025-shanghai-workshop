@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="referrer" content="no-referrer">
-  <title>Shanghai Workshop 2025</title>
+  <title>Shanghai Workshop 2025 - CIEP</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 13px;
@@ -15,12 +13,10 @@
       color: #1e293b;
       background: #f8fafc;
     }
-
-    /* Navigation */
     nav {
       background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
       color: white;
-      padding: 12px 20px;
+      padding: 10px 20px;
       position: fixed;
       top: 0;
       width: 100%;
@@ -29,178 +25,90 @@
       justify-content: space-between;
       align-items: center;
     }
-
     nav .title { font-size: 14px; font-weight: 600; }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 12px;
-      margin-left: 20px;
-      opacity: 0.9;
-    }
-
+    nav a { color: white; text-decoration: none; font-size: 12px; margin-left: 18px; opacity: 0.9; }
     nav a:hover { opacity: 1; }
-
-    /* Main container */
-    .container {
-      max-width: 900px;
-      margin: 60px auto 40px;
-      padding: 0 20px;
-    }
-
-    /* Header */
+    .container { max-width: 900px; margin: 55px auto 40px; padding: 0 20px; }
     header {
       text-align: center;
-      padding: 30px 0;
+      padding: 25px 0;
       border-bottom: 2px solid #2563eb;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
-
-    header h1 {
-      color: #1e3a5f;
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    header .subtitle {
-      color: #2563eb;
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    header .meta {
-      margin-top: 12px;
-      color: #64748b;
-      font-size: 13px;
-    }
-
-    /* Sections */
+    header h1 { color: #1e3a5f; font-size: 20px; margin-bottom: 6px; }
+    header .subtitle { color: #2563eb; font-size: 14px; font-weight: 500; }
+    header .meta { margin-top: 10px; color: #64748b; font-size: 12px; }
     section {
       background: white;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       border-left: 4px solid #2563eb;
     }
-
-    section h2 {
-      color: #1e3a5f;
-      font-size: 16px;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    section h3 {
-      color: #334155;
-      font-size: 13px;
-      margin: 12px 0 8px;
-    }
-
-    /* Badges */
+    section h2 { color: #1e3a5f; font-size: 15px; margin-bottom: 10px; }
+    section h3 { color: #334155; font-size: 13px; margin: 10px 0 6px; }
     .badge {
       display: inline-block;
       background: #dbeafe;
       color: #1e40af;
-      padding: 3px 10px;
-      border-radius: 12px;
-      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 10px;
     }
-
-    .badge-dark {
-      background: #1e3a5f;
-      color: white;
-    }
-
-    /* Tables */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 10px 0;
-      font-size: 12px;
-    }
-
-    th {
-      background: #1e3a5f;
-      color: white;
-      padding: 8px 10px;
-      text-align: left;
-      font-weight: 500;
-    }
-
-    td {
-      padding: 8px 10px;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
+    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 12px; }
+    th { background: #1e3a5f; color: white; padding: 6px 8px; text-align: left; font-weight: 500; }
+    td { padding: 6px 8px; border-bottom: 1px solid #e2e8f0; }
     tr:hover td { background: #f1f5f9; }
-
-    /* Keynote */
     .keynote {
       background: #eff6ff;
-      border-radius: 6px;
-      padding: 12px 15px;
-      margin: 10px 0;
+      border-radius: 5px;
+      padding: 10px 12px;
+      margin: 8px 0;
     }
-
-    .keynote-speaker {
-      font-weight: 600;
-      color: #1e3a5f;
-    }
-
-    .keynote-title {
-      color: #475569;
-      font-style: italic;
-      margin-top: 4px;
-    }
-
-    /* Gallery */
+    .keynote-speaker { font-weight: 600; color: #1e3a5f; font-size: 12px; }
+    .keynote-title { color: #475569; font-style: italic; margin-top: 3px; font-size: 12px; }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px;
-      margin: 15px 0;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      margin: 12px 0;
     }
-
     .gallery-item {
       background: #f1f5f9;
-      border-radius: 6px;
+      border-radius: 5px;
       overflow: hidden;
     }
-
     .gallery-item img {
       width: 100%;
-      height: 140px;
+      height: 120px;
       object-fit: cover;
       display: block;
     }
-
     .gallery-item .caption {
-      padding: 8px;
-      font-size: 11px;
+      padding: 6px 8px;
+      font-size: 10px;
       color: #475569;
       text-align: center;
     }
-
-    /* Footer */
+    .hero-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       color: #64748b;
       font-size: 11px;
       border-top: 1px solid #e2e8f0;
     }
-
     footer a { color: #2563eb; }
-
-    /* Links */
     a { color: #2563eb; text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    p { margin-bottom: 8px; }
+    p { margin-bottom: 6px; font-size: 12px; }
   </style>
 </head>
 <body>
@@ -220,9 +128,11 @@
       <div class="meta">October 20-23, 2025 | Shanghai, China</div>
     </header>
 
+    <img src="images/shanghai_05.jpg" alt="CIEP 2025 Conference" class="hero-img">
+
     <section id="about">
       <h2>About</h2>
-      <p>International scholars, journal editors, and young researchers discuss advances in data science, fintech, and digital economy at prestigious venues across Shanghai.</p>
+      <p>International scholars, journal editors, and young researchers discuss advances in data science, fintech, and digital economy at the 23rd CIEP conference in Shanghai.</p>
     </section>
 
     <section id="sessions">
@@ -267,43 +177,39 @@
     <section id="gallery">
       <h2>Photo Gallery</h2>
 
-      <h3>Economic Resilience Roundtable (Oct 20)</h3>
+      <h3>Shanghai</h3>
       <div class="gallery">
         <div class="gallery-item">
-          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkd0wTqLblc-MsEV3yhJvqLI_8rgzkqQqZxrrwtsUXu0op2QXSM0YrW4bBMj2LiHfumL-q-x6qn5SxDXQfK6cJyxJZexaNLW257tPE4X61uKqVHTiGJtNSqpIgbZPjlDDtoVXf4aHmdBuNELmDjXZEUj6dxnBLbPyMClO5Xll4H-K7PPDfiKN4Z15rplsc0yvDSxLfiDdt-VYxTq2SbYTb-Kawa6EXP-whyI1_E=w1280" alt="Roundtable" referrerpolicy="no-referrer">
-          <div class="caption">Roundtable discussion</div>
+          <img src="images/shanghai_06.jpg" alt="Shanghai skyline">
+          <div class="caption">Shanghai Pudong skyline</div>
         </div>
         <div class="gallery-item">
-          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfAjU0pejIodqSihuSMY567H3vVCzxdaV9z7LOMiISDhRn87o638JGm8RSScxqYgCHizzS2xwOCboXcasfM6QQ638rHzzjxOpH3WATovQjisILhHrYBSi_e14RBPwT-gRMLaahDMokdHLYuuyy9r9bqaVIX-aknG1IPqxP8RFONdwogNSz7n82tDJi0A3YfLDgyBnHyYoTvvGf_Th_vJb66Aj8Dnov_TET0Ie4=w1280" alt="Panel" referrerpolicy="no-referrer">
+          <img src="images/shanghai_02.jpg" alt="Huangpu River">
+          <div class="caption">Huangpu River</div>
+        </div>
+      </div>
+
+      <h3>CIEP 2025 Conference</h3>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="images/shanghai_05.jpg" alt="Conference hall">
+          <div class="caption">Main conference hall</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/shanghai_04.jpg" alt="Keynote">
+          <div class="caption">CIEP 2025 keynote</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/shanghai_01.jpg" alt="Panel">
           <div class="caption">Panel discussion</div>
         </div>
         <div class="gallery-item">
-          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkfj9Q8xcymaBRcHQoipYxPef4GC0aRKEHPNwf8_6qzBh70n1yDsL5dwt-TcjiPNGfgLsCqEk5sF0DTwro-t02kPDVzessmpYZZF5OredNXinna308RQzrhs1QCGUFHPh7aIHHb_5TiTntk6zMTx8EB4UZwYAffaEhcKFxTacEq65z_MvrCGWhRvB5bEjwKLSZJCNI7admfYtG41I-t4_ryn71dr-SmVm84vvQ8=w1280" alt="Scholars" referrerpolicy="no-referrer">
-          <div class="caption">Scholars meeting</div>
-        </div>
-      </div>
-
-      <h3>Editors Meeting (Oct 22)</h3>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCke7ZWK40kAviZKlRD3qZ3EWFFUZaUfV7HI6l4obzjdPe301VLausTx2Yxx7_o95Lssw70E6NarXwkzBkqtd_xlBYZyb1BFs2TUC0rm3vEEcyQx0awcIoCBXR_CziCXZeH5qc5URZ_zI7J8ddtzZUCfFiLXFLLsP7ruYjCwIdMcbcDItWuQhC6VSo9g-ZWYfw-TpGvOBgN0H3_ZtT9oVBg0gZjIN-t_mBHqXZ4Y=w1280" alt="Editors" referrerpolicy="no-referrer">
-          <div class="caption">Editors meeting</div>
+          <img src="images/shanghai_07.jpg" alt="Presentation">
+          <div class="caption">Research presentation</div>
         </div>
         <div class="gallery-item">
-          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcwM24zK-ENCyJp0S0zknVwtcbUEOBxopI4-wQ7eKf_UUYtzJTspeuvyL17Gu0PzCBfdg_HZ2NlxCq0Tlho9G3ms5iqSb77vosBFOnSNOPvJr_p_zf8RVCh2OHRMIgVTcGURYsRmbBilLAo6snAGDTOXxmGp3j83kEOPNbWimtYb9mojnSGKUFNK2NAvZfXMB2Jh6AAymRoRyZZ2YTRMms11hO0nCCve4vsLSg=w1280" alt="Venue" referrerpolicy="no-referrer">
-          <div class="caption">Conference venue</div>
-        </div>
-      </div>
-
-      <h3>Young Scholars Forum (Oct 22)</h3>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkdpxNPqM2CjTDQpJMq7Jt8wGm6uRk50mmRgIpX0dGZElzQxtvqujLxuGI6mG8tydfHfWI-EBfJ14Q3eieqiTF3bwhjMQa-GZZ9bJvva2WpiTMPk2cN9saPlo6X2M5iAxFDy-APYh6afwozOPQeNMSIKxIS2z-OWnSy7vSaSFQBkBwnDxqC0_BJmqBgGJY9InzR7ETWnhHVYkjsNldBktgDaSBtcCnme1SjYaIg=w1280" alt="Forum" referrerpolicy="no-referrer">
-          <div class="caption">Young Scholars Forum</div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://lh3.googleusercontent.com/sitesv/AAzXCke-Din2mi6t2vdi6wsujvDsHvJn3G0FRM24X4U1AKkkhgSicIfsOVtv6LVDojVgww8J0Q7EIrUvoPxaDME1pSVRtZb69Mi-OKVdpXjvVOtz1DUgEPU2JWqP5xG596MQMSM5D5izZXDGOzPc7u42d0E79voQClWs4XWmYA0jRDmGohnQbxJJVF_a-1yc7NDd1fHJMyFhJRDPbC4NQL7aFujlC_CxqJtd_PugiyY=w1280" alt="Keynote" referrerpolicy="no-referrer">
-          <div class="caption">Keynote presentation</div>
+          <img src="images/shanghai_03.jpg" alt="Roundtable">
+          <div class="caption">Roundtable discussion</div>
         </div>
       </div>
     </section>
@@ -318,7 +224,7 @@
     </section>
 
     <footer>
-      <p>23rd China International Talent Exchange Conference | October 2025 | Shanghai</p>
+      <p>23rd China International Talent Exchange Conference | CIEP 2025 | Shanghai</p>
       <p><a href="https://www.joergosterrieder.com/public-outreach#h.1z0x9146tw94">Source</a> | <a href="https://github.com/Digital-AI-Finance">Digital-AI-Finance</a></p>
     </footer>
   </div>
