@@ -58,9 +58,10 @@ International scholars examining economic resilience in emerging markets.
 
 Organizer: Capital University of Economics and Business (Prof. Yezhou Sha)
 
-> **Keynote:** Prof. Joerg Osterrieder
->
-> "Digital Finance: Non-Systematic Systematics, LLM Narratives, and High-Frequency Trading Around Macro-News Announcements"
+<div class="keynote-box">
+<div class="keynote-speaker">Keynote: Prof. Joerg Osterrieder</div>
+<div class="keynote-title">"Digital Finance: Non-Systematic Systematics, LLM Narratives, and High-Frequency Trading Around Macro-News Announcements"</div>
+</div>
 
 </div>
 
@@ -68,5 +69,7 @@ Organizer: Capital University of Economics and Business (Prof. Yezhou Sha)
 
 ## Venues
 
-- **Shanghai Yoja Hotel** - Roundtable (Oct 20)
-- **Shanghai World Expo Conference Center** - Editors Meeting & Forum (Oct 22)
+<ul class="venue-list">
+<li><span class="venue-name">Shanghai Yoja Hotel</span> - Roundtable (Oct 20)</li>
+<li><span class="venue-name">Shanghai World Expo Conference Center</span> - Editors Meeting & Forum (Oct 22)</li>
+</ul>
