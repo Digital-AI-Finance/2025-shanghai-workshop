@@ -4,229 +4,868 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shanghai Workshop 2025 - CIEP</title>
+  <meta name="description" content="23rd China International Talent Exchange Conference - Data Science, Fintech and Digital Economy. October 20-23, 2025, Shanghai, China.">
+  <meta property="og:title" content="Shanghai Workshop 2025 - CIEP">
+  <meta property="og:description" content="International scholars, journal editors, and young researchers discuss advances in data science, fintech, and digital economy.">
+  <meta property="og:image" content="images/shanghai_05.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-size: 13px;
-      line-height: 1.5;
-      color: #1e293b;
-      background: #f8fafc;
+    :root {
+      --primary: #1e3a5f;
+      --primary-light: #2563eb;
+      --accent: #e07020;
+      --bg-light: #f8fafc;
+      --bg-alt: #f1f5f9;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --sidebar-width: 200px;
     }
-    nav {
-      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
-      color: white;
-      padding: 10px 20px;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg-light);
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
       position: fixed;
+      left: 0;
       top: 0;
-      width: 100%;
+      width: var(--sidebar-width);
+      height: 100vh;
+      background: var(--primary);
+      padding: 20px 0;
       z-index: 1000;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar-logo {
+      padding: 10px 20px 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 15px;
+    }
+    .sidebar-logo img {
+      width: 80px;
+      height: auto;
+      border-radius: 8px;
+      background: white;
+      padding: 8px;
+    }
+    .sidebar-section {
+      padding: 8px 20px;
+    }
+    .sidebar-section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+    }
+    .sidebar a {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 6px 0;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    .sidebar a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+    .sidebar a.active {
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .sidebar-footer a {
+      font-size: 11px;
+      opacity: 0.7;
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1100;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    /* Main content */
+    .main {
+      margin-left: var(--sidebar-width);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 380px;
+      background: linear-gradient(rgba(30, 58, 95, 0.7), rgba(30, 58, 95, 0.85)), url('images/shanghai_06.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero-content {
+      max-width: 700px;
+      padding: 20px;
+    }
+    .hero-logo {
+      width: 120px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      background: white;
+      padding: 10px;
+    }
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    .hero .subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+    .hero .meta {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+    .hero .meta svg {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    /* Section styling */
+    section {
+      padding: 50px 0;
+    }
+    section:nth-child(even) {
+      background: var(--bg-alt);
+    }
+    section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      color: var(--primary);
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    section h2 svg {
+      width: 28px;
+      height: 28px;
+      color: var(--primary-light);
+    }
+    section h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      color: var(--primary);
+      margin: 30px 0 15px;
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-left: 4px solid var(--primary-light);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .card-header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-    nav .title { font-size: 14px; font-weight: 600; }
-    nav a { color: white; text-decoration: none; font-size: 12px; margin-left: 18px; opacity: 0.9; }
-    nav a:hover { opacity: 1; }
-    .container { max-width: 900px; margin: 55px auto 40px; padding: 0 20px; }
-    header {
-      text-align: center;
-      padding: 25px 0;
-      border-bottom: 2px solid #2563eb;
-      margin-bottom: 20px;
+    .card-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 17px;
+      color: var(--primary);
     }
-    header h1 { color: #1e3a5f; font-size: 20px; margin-bottom: 6px; }
-    header .subtitle { color: #2563eb; font-size: 14px; font-weight: 500; }
-    header .meta { margin-top: 10px; color: #64748b; font-size: 12px; }
-    section {
-      background: white;
-      border-radius: 6px;
-      padding: 16px 18px;
-      margin-bottom: 16px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      border-left: 4px solid #2563eb;
-    }
-    section h2 { color: #1e3a5f; font-size: 15px; margin-bottom: 10px; }
-    section h3 { color: #334155; font-size: 13px; margin: 10px 0 6px; }
     .badge {
       display: inline-block;
       background: #dbeafe;
       color: #1e40af;
-      padding: 2px 8px;
-      border-radius: 10px;
-      font-size: 10px;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 11px;
+      font-weight: 500;
     }
-    table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 12px; }
-    th { background: #1e3a5f; color: white; padding: 6px 8px; text-align: left; font-weight: 500; }
-    td { padding: 6px 8px; border-bottom: 1px solid #e2e8f0; }
-    tr:hover td { background: #f1f5f9; }
+    .badge.accent {
+      background: #fff7ed;
+      color: #c2410c;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 13px;
+    }
+    th {
+      background: var(--primary);
+      color: white;
+      padding: 12px 15px;
+      text-align: left;
+      font-weight: 500;
+    }
+    td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* Keynote highlight */
     .keynote {
-      background: #eff6ff;
-      border-radius: 5px;
-      padding: 10px 12px;
-      margin: 8px 0;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 4px solid var(--accent);
     }
-    .keynote-speaker { font-weight: 600; color: #1e3a5f; font-size: 12px; }
-    .keynote-title { color: #475569; font-style: italic; margin-top: 3px; font-size: 12px; }
+    .keynote-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .keynote-speaker {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 15px;
+    }
+    .keynote-title {
+      color: var(--text);
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    /* Speakers Grid */
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .speaker-card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .speaker-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    .speaker-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      margin: 0 auto 15px;
+      overflow: hidden;
+    }
+    .speaker-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .speaker-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+    .speaker-affiliation {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+    .speaker-role {
+      display: inline-block;
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-weight: 500;
+    }
+    .speaker-role.panelist {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+    .speaker-role.editor {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .speaker-role.keynote {
+      background: #fff7ed;
+      color: #c2410c;
+    }
+
+    /* Gallery */
+    .gallery-section h3 {
+      margin-top: 0;
+    }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 10px;
-      margin: 12px 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 20px 0;
     }
     .gallery-item {
-      background: #f1f5f9;
-      border-radius: 5px;
+      position: relative;
+      border-radius: 10px;
       overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
     }
     .gallery-item img {
       width: 100%;
-      height: 120px;
+      height: 100%;
       object-fit: cover;
-      display: block;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
     }
     .gallery-item .caption {
-      padding: 6px 8px;
-      font-size: 10px;
-      color: #475569;
-      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: white;
+      padding: 30px 12px 12px;
+      font-size: 12px;
     }
-    .hero-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 15px;
+
+    /* Venues table */
+    .venues-table {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
+    .venues-table th {
+      background: var(--primary);
+    }
+
+    /* Footer */
     footer {
+      background: var(--primary);
+      color: white;
+      padding: 40px 0;
       text-align: center;
-      padding: 15px;
-      color: #64748b;
-      font-size: 11px;
-      border-top: 1px solid #e2e8f0;
     }
-    footer a { color: #2563eb; }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    p { margin-bottom: 6px; font-size: 12px; }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .footer-links {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      font-size: 13px;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate {
+      animation: fadeInUp 0.5s ease-out forwards;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+      }
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .main {
+        margin-left: 0;
+      }
+      .hero {
+        height: 320px;
+      }
+      .hero h1 {
+        font-size: 22px;
+      }
+      .container {
+        padding: 0 20px;
+      }
+      section {
+        padding: 35px 0;
+      }
+      .speakers-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <span class="title">Shanghai Workshop 2025</span>
-    <div>
-      <a href="#sessions">Sessions</a>
-      <a href="#gallery">Gallery</a>
+  <!-- Mobile menu toggle -->
+  <button class="menu-toggle" onclick="toggleMenu()">
+    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M3 12h18M3 6h18M3 18h18"/>
+    </svg>
+  </button>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <img src="images/ciep_logo.png" alt="CIEP 2025">
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Overview</div>
+      <a href="#about">About</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Sessions</div>
+      <a href="#session1">Roundtable</a>
+      <a href="#session2">Editors Meeting</a>
+      <a href="#session3">Young Scholars</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">People</div>
+      <a href="#speakers">Speakers</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Media</div>
+      <a href="#gallery">Photo Gallery</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Info</div>
+      <a href="#venues">Venues</a>
+    </div>
+
+    <div class="sidebar-footer">
       <a href="https://github.com/Digital-AI-Finance/2025-shanghai-workshop">GitHub</a>
     </div>
   </nav>
 
-  <div class="container">
-    <header>
-      <h1>23rd China International Talent Exchange Conference</h1>
-      <div class="subtitle">Data Science, Fintech and Digital Economy</div>
-      <div class="meta">October 20-23, 2025 | Shanghai, China</div>
-    </header>
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-content">
+        <img src="images/ciep_logo.png" alt="CIEP 2025" class="hero-logo">
+        <h1>23rd China International Talent Exchange Conference</h1>
+        <div class="subtitle">Data Science, Fintech and Digital Economy</div>
+        <div class="meta">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          October 20-23, 2025 &nbsp;|&nbsp;
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Shanghai, China
+        </div>
+      </div>
+    </div>
 
-    <img src="images/shanghai_05.jpg" alt="CIEP 2025 Conference" class="hero-img">
-
+    <!-- About Section -->
     <section id="about">
-      <h2>About</h2>
-      <p>International scholars, journal editors, and young researchers discuss advances in data science, fintech, and digital economy at the 23rd CIEP conference in Shanghai.</p>
-    </section>
-
-    <section id="sessions">
-      <h2>Session 1: Economic Resilience Roundtable</h2>
-      <p><span class="badge">Oct 20</span> <span class="badge">Shanghai Yoja Hotel</span></p>
-      <p>International scholars examining economic resilience in emerging markets.</p>
-      <table>
-        <tr><th>Scholar</th><th>Affiliation</th></tr>
-        <tr><td>Susan Sharma</td><td>Deakin University, Australia</td></tr>
-        <tr><td>Liu Guanyu</td><td>Capital University of Economics and Business, China</td></tr>
-        <tr><td>Georg Keilbar</td><td>Humboldt University of Berlin, Germany</td></tr>
-        <tr><td>Joerg Osterrieder</td><td>University of Twente, Netherlands</td></tr>
-        <tr><td>Lu Qiao</td><td>Leeds University, UK</td></tr>
-        <tr><td>Suyang Li</td><td>Swansea University, UK</td></tr>
-      </table>
-    </section>
-
-    <section>
-      <h2>Session 2: Meeting with Editors</h2>
-      <p><span class="badge">Oct 22</span> <span class="badge">World Expo Conference Center</span></p>
-      <p>"A China's Story, A Global Research" - promoting Chinese research internationally.</p>
-      <table>
-        <tr><th>Editor</th><th>Journal / Affiliation</th></tr>
-        <tr><td>Jianqing Fan</td><td>JASA; Dean, Fudan School of Data Science</td></tr>
-        <tr><td>Wolfgang Haerdle</td><td>Digital Finance; Humboldt University Berlin</td></tr>
-        <tr><td>Jonathan Batten</td><td>Finance Research Letters; RMIT University</td></tr>
-        <tr><td>Peter Szilagyi</td><td>JIFMIM; EDHEC Business School</td></tr>
-        <tr><td>Joerg Osterrieder</td><td>Management and Marketing</td></tr>
-      </table>
-    </section>
-
-    <section>
-      <h2>Session 3: Young Scholars Forum</h2>
-      <p><span class="badge">Oct 22</span> <span class="badge">World Expo Conference Center</span></p>
-      <p>Organizer: Capital University of Economics and Business (Prof. Yezhou Sha)</p>
-      <div class="keynote">
-        <div class="keynote-speaker">Keynote: Prof. Joerg Osterrieder</div>
-        <div class="keynote-title">"Digital Finance: Non-Systematic Systematics, LLM Narratives, and High-Frequency Trading Around Macro-News Announcements"</div>
+      <div class="container">
+        <h2>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          About the Conference
+        </h2>
+        <p style="font-size: 15px; max-width: 800px; line-height: 1.8;">
+          The 23rd China International Talent Exchange Conference (CIEP 2025) brings together international scholars, leading journal editors, and emerging researchers to discuss cutting-edge advances in data science, fintech, and the digital economy. This prestigious gathering features roundtable discussions, editorial meetings, and a young scholars forum, fostering collaboration between Chinese and international academic communities.
+        </p>
       </div>
     </section>
 
-    <section id="gallery">
-      <h2>Photo Gallery</h2>
+    <!-- Session 1 -->
+    <section id="session1">
+      <div class="container">
+        <h2>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          Sessions
+        </h2>
 
-      <h3>Shanghai</h3>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="images/shanghai_06.jpg" alt="Shanghai skyline">
-          <div class="caption">Shanghai Pudong skyline</div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Session 1: Economic Resilience Roundtable</div>
+            <div>
+              <span class="badge">Oct 20</span>
+              <span class="badge accent">Shanghai Yoja Hotel</span>
+            </div>
+          </div>
+          <p style="margin-bottom: 15px; color: var(--text-light);">International scholars examining economic resilience in emerging markets.</p>
+          <table>
+            <tr><th>Scholar</th><th>Affiliation</th></tr>
+            <tr><td>Susan Sharma</td><td>Deakin University, Australia</td></tr>
+            <tr><td>Liu Guanyu</td><td>Capital University of Economics and Business, China</td></tr>
+            <tr><td>Georg Keilbar</td><td>Humboldt University of Berlin, Germany</td></tr>
+            <tr><td>Joerg Osterrieder</td><td>University of Twente, Netherlands</td></tr>
+            <tr><td>Lu Qiao</td><td>Leeds University, UK</td></tr>
+            <tr><td>Suyang Li</td><td>Swansea University, UK</td></tr>
+          </table>
         </div>
-        <div class="gallery-item">
-          <img src="images/shanghai_02.jpg" alt="Huangpu River">
-          <div class="caption">Huangpu River</div>
-        </div>
-      </div>
 
-      <h3>CIEP 2025 Conference</h3>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="images/shanghai_05.jpg" alt="Conference hall">
-          <div class="caption">Main conference hall</div>
+        <div class="card" id="session2">
+          <div class="card-header">
+            <div class="card-title">Session 2: Meeting with Editors</div>
+            <div>
+              <span class="badge">Oct 22</span>
+              <span class="badge accent">World Expo Center</span>
+            </div>
+          </div>
+          <p style="margin-bottom: 15px; color: var(--text-light);">"A China's Story, A Global Research" - promoting Chinese research internationally.</p>
+          <table>
+            <tr><th>Editor</th><th>Journal / Affiliation</th></tr>
+            <tr><td>Jianqing Fan</td><td>JASA; Dean, Fudan School of Data Science</td></tr>
+            <tr><td>Wolfgang Haerdle</td><td>Digital Finance; Humboldt University Berlin</td></tr>
+            <tr><td>Jonathan Batten</td><td>Finance Research Letters; RMIT University</td></tr>
+            <tr><td>Peter Szilagyi</td><td>JIFMIM; EDHEC Business School</td></tr>
+            <tr><td>Joerg Osterrieder</td><td>Management and Marketing</td></tr>
+          </table>
         </div>
-        <div class="gallery-item">
-          <img src="images/shanghai_04.jpg" alt="Keynote">
-          <div class="caption">CIEP 2025 keynote</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/shanghai_01.jpg" alt="Panel">
-          <div class="caption">Panel discussion</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/shanghai_07.jpg" alt="Presentation">
-          <div class="caption">Research presentation</div>
-        </div>
-        <div class="gallery-item">
-          <img src="images/shanghai_03.jpg" alt="Roundtable">
-          <div class="caption">Roundtable discussion</div>
+
+        <div class="card" id="session3">
+          <div class="card-header">
+            <div class="card-title">Session 3: Young Scholars Forum</div>
+            <div>
+              <span class="badge">Oct 22</span>
+              <span class="badge accent">World Expo Center</span>
+            </div>
+          </div>
+          <p style="margin-bottom: 15px; color: var(--text-light);">Organizer: Capital University of Economics and Business (Prof. Yezhou Sha)</p>
+          <div class="keynote">
+            <div class="keynote-label">Keynote Presentation</div>
+            <div class="keynote-speaker">Prof. Joerg Osterrieder</div>
+            <div class="keynote-title">"Digital Finance: Non-Systematic Systematics, LLM Narratives, and High-Frequency Trading Around Macro-News Announcements"</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Venues</h2>
-      <table>
-        <tr><th>Venue</th><th>Sessions</th><th>Date</th></tr>
-        <tr><td>Shanghai Yoja Hotel</td><td>Economic Resilience Roundtable</td><td>Oct 20</td></tr>
-        <tr><td>Shanghai World Expo Conference Center</td><td>Editors Meeting, Young Scholars Forum</td><td>Oct 22</td></tr>
-      </table>
+    <!-- Speakers Section -->
+    <section id="speakers">
+      <div class="container">
+        <h2>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/></svg>
+          Speakers
+        </h2>
+
+        <div class="speakers-grid">
+          <div class="speaker-card">
+            <div class="speaker-avatar">JF</div>
+            <div class="speaker-name">Jianqing Fan</div>
+            <div class="speaker-affiliation">Princeton University / Fudan University</div>
+            <span class="speaker-role editor">JASA Editor</span>
+          </div>
+
+          <div class="speaker-card">
+            <div class="speaker-avatar">WH</div>
+            <div class="speaker-name">Wolfgang Haerdle</div>
+            <div class="speaker-affiliation">Humboldt University of Berlin</div>
+            <span class="speaker-role editor">Digital Finance Editor</span>
+          </div>
+
+          <div class="speaker-card">
+            <div class="speaker-avatar">JB</div>
+            <div class="speaker-name">Jonathan Batten</div>
+            <div class="speaker-affiliation">RMIT University, Australia</div>
+            <span class="speaker-role editor">FRL Editor</span>
+          </div>
+
+          <div class="speaker-card">
+            <div class="speaker-avatar">PS</div>
+            <div class="speaker-name">Peter Szilagyi</div>
+            <div class="speaker-affiliation">EDHEC Business School</div>
+            <span class="speaker-role editor">JIFMIM Editor</span>
+          </div>
+
+          <div class="speaker-card">
+            <div class="speaker-avatar">JO</div>
+            <div class="speaker-name">Joerg Osterrieder</div>
+            <div class="speaker-affiliation">University of Twente, Netherlands</div>
+            <span class="speaker-role keynote">Keynote Speaker</span>
+          </div>
+
+          <div class="speaker-card">
+            <div class="speaker-avatar">SS</div>
+            <div class="speaker-name">Susan Sharma</div>
+            <div class="speaker-affiliation">Deakin University, Australia</div>
+            <span class="speaker-role panelist">Panelist</span>
+          </div>
+
+          <div class="speaker-card">
+            <div class="speaker-avatar">LG</div>
+            <div class="speaker-name">Liu Guanyu</div>
+            <div class="speaker-affiliation">Capital Univ. of Economics and Business</div>
+            <span class="speaker-role panelist">Panelist</span>
+          </div>
+
+          <div class="speaker-card">
+            <div class="speaker-avatar">GK</div>
+            <div class="speaker-name">Georg Keilbar</div>
+            <div class="speaker-affiliation">Humboldt University of Berlin</div>
+            <span class="speaker-role panelist">Panelist</span>
+          </div>
+
+          <div class="speaker-card">
+            <div class="speaker-avatar">LQ</div>
+            <div class="speaker-name">Lu Qiao</div>
+            <div class="speaker-affiliation">Leeds University, UK</div>
+            <span class="speaker-role panelist">Panelist</span>
+          </div>
+
+          <div class="speaker-card">
+            <div class="speaker-avatar">SL</div>
+            <div class="speaker-name">Suyang Li</div>
+            <div class="speaker-affiliation">Swansea University, UK</div>
+            <span class="speaker-role panelist">Panelist</span>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+      <div class="container">
+        <h2>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          Photo Gallery
+        </h2>
+
+        <h3>Shanghai</h3>
+        <div class="gallery">
+          <a href="images/shanghai_06.jpg" class="gallery-item glightbox" data-gallery="shanghai">
+            <img src="images/shanghai_06.jpg" alt="Shanghai Pudong skyline">
+            <div class="caption">Shanghai Pudong Skyline</div>
+          </a>
+          <a href="images/shanghai_02.jpg" class="gallery-item glightbox" data-gallery="shanghai">
+            <img src="images/shanghai_02.jpg" alt="Huangpu River">
+            <div class="caption">Huangpu River</div>
+          </a>
+        </div>
+
+        <h3>CIEP 2025 Conference</h3>
+        <div class="gallery">
+          <a href="images/shanghai_05.jpg" class="gallery-item glightbox" data-gallery="conference">
+            <img src="images/shanghai_05.jpg" alt="Main conference hall">
+            <div class="caption">Main Conference Hall</div>
+          </a>
+          <a href="images/shanghai_04.jpg" class="gallery-item glightbox" data-gallery="conference">
+            <img src="images/shanghai_04.jpg" alt="CIEP 2025 Keynote">
+            <div class="caption">CIEP 2025 Keynote</div>
+          </a>
+          <a href="images/shanghai_01.jpg" class="gallery-item glightbox" data-gallery="conference">
+            <img src="images/shanghai_01.jpg" alt="Panel discussion">
+            <div class="caption">Panel Discussion</div>
+          </a>
+          <a href="images/shanghai_07.jpg" class="gallery-item glightbox" data-gallery="conference">
+            <img src="images/shanghai_07.jpg" alt="Research presentation">
+            <div class="caption">Research Presentation</div>
+          </a>
+          <a href="images/shanghai_03.jpg" class="gallery-item glightbox" data-gallery="conference">
+            <img src="images/shanghai_03.jpg" alt="Roundtable discussion">
+            <div class="caption">Roundtable Discussion</div>
+          </a>
+          <a href="images/shanghai_10.jpg" class="gallery-item glightbox" data-gallery="conference">
+            <img src="images/shanghai_10.jpg" alt="Academic presentation">
+            <div class="caption">Academic Presentation</div>
+          </a>
+          <a href="images/shanghai_11.jpg" class="gallery-item glightbox" data-gallery="conference">
+            <img src="images/shanghai_11.jpg" alt="Conference audience">
+            <div class="caption">Conference Audience</div>
+          </a>
+          <a href="images/shanghai_14.jpg" class="gallery-item glightbox" data-gallery="conference">
+            <img src="images/shanghai_14.jpg" alt="Keynote speaker">
+            <div class="caption">Keynote Speaker</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venues Section -->
+    <section id="venues">
+      <div class="container">
+        <h2>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          Venues
+        </h2>
+
+        <div class="venues-table">
+          <table>
+            <tr>
+              <th>Venue</th>
+              <th>Sessions</th>
+              <th>Date</th>
+            </tr>
+            <tr>
+              <td>Shanghai Yoja Hotel</td>
+              <td>Economic Resilience Roundtable</td>
+              <td>October 20</td>
+            </tr>
+            <tr>
+              <td>Shanghai World Expo Conference Center</td>
+              <td>Editors Meeting, Young Scholars Forum</td>
+              <td>October 22</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <p>23rd China International Talent Exchange Conference | CIEP 2025 | Shanghai</p>
-      <p><a href="https://www.joergosterrieder.com/public-outreach#h.1z0x9146tw94">Source</a> | <a href="https://github.com/Digital-AI-Finance">Digital-AI-Finance</a></p>
+      <div class="container">
+        <img src="images/ciep_logo.png" alt="CIEP 2025" style="width: 80px; margin-bottom: 15px; border-radius: 8px; background: white; padding: 8px;">
+        <p>23rd China International Talent Exchange Conference</p>
+        <p>CIEP 2025 | Shanghai, China</p>
+        <div class="footer-links">
+          <a href="https://www.joergosterrieder.com/public-outreach#h.1z0x9146tw94">Source</a>
+          <a href="https://github.com/Digital-AI-Finance">Digital-AI-Finance</a>
+          <a href="https://github.com/Digital-AI-Finance/2025-shanghai-workshop">Repository</a>
+        </div>
+      </div>
     </footer>
-  </div>
+  </main>
+
+  <!-- GLightbox -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    // Initialize lightbox
+    const lightbox = GLightbox({
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: true
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+
+    // Close menu when clicking a link on mobile
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          document.getElementById('sidebar').classList.remove('open');
+        }
+      });
+    });
+
+    // Highlight active section in sidebar
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
